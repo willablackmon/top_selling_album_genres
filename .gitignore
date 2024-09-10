@@ -36,6 +36,9 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
+# '_other' data folder  09.10.2024 wab
+_other/"
+
 # Unit test / coverage reports
 htmlcov/
 .tox/

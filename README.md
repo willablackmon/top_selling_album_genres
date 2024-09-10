@@ -86,15 +86,32 @@ for genre in df.columns[1:]:
     df.plot(kind = 'line', x = 'Year', y = genre, figsize=(5, 2))
 ```
 
-**Initial Visualizations Examples:**
 
-Scatter and Line Plots showing spike in % of top selling albums in New Wave genre starting in the late 1970s until late 1980s.
+**Initial Visualizations:**
+
+Scatter and Line Plots helped display historical trends in the data visually.
+
+
+Example 1: New Wave genre peak, starting in the late 1970s until late 1980s.
 
 > **New wave commercially peaked from the late 1970s into the early 1980s with numerous major musicians and an abundance of one-hit wonders** . MTV, which was launched in 1981, heavily promoted new-wave acts, boosting the genre's popularity in the United States.
 >
 > --source: https://en.wikipedia.org/wiki/New_wave_music
 
 ![1725643241234](image/README/1725643241234.png)
+
+Example 2: Chamber Pop popularity rise, starting in the mid-1990s
+
+> In the mid-1990s, chamber pop developed as a subgenre of [indie rock](https://en.wikipedia.org/wiki/Indie_rock)[[4]](https://en.wikipedia.org/wiki/Chamber_pop#cite_note-FOOTNOTETonelli20043-4) or [indie pop](https://en.wikipedia.org/wiki/Indie_pop)[[5]](https://en.wikipedia.org/wiki/Chamber_pop#cite_note-AMIndiePop-5) in which musicians opposed the [distorted](https://en.wikipedia.org/wiki/Distortion_(music)) guitars, [lo-fi](https://en.wikipedia.org/wiki/Lo-fi_music) aesthetic, and simple arrangements common to the [alternative](https://en.wikipedia.org/wiki/Alternative_rock) or "[modern rock](https://en.wikipedia.org/wiki/Modern_rock)" groups of that era.
+
+-source: https://en.wikipedia.org/wiki/Chamber_pop**
+
+
+
+Example 3: The rise of Conscious Hip-Hop, starting in the early-1990s
+
+![1725999998060](image/README/1725999998060.png)
+
 
 
 ## Time Series Forecasting with Prophet
@@ -131,4 +148,11 @@ for genre in df.columns[1:]:
     model.plot(forecast_trends, xlabel='Date', ylabel=(f'Genre: {genre}'))
 ```
 
-![1725647712677](image/README/1725647712677.png)
+From example 2 and 3 above, here are the Prophet predictions for the coming 8 years. 
+
+Both Chamber Pop and Conscious Hip-Hop are predicted by the model to be on the rise again.
+
+![1726000143596](image/README/1726000143596.png)
+
+
+![1726000113002](image/README/1726000113002.png)
