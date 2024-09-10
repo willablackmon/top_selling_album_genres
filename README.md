@@ -4,6 +4,10 @@
 
 Study of top selling albums and the most represented genres by year.  Data sourced from acclaimedmusic.net to identify top 3000 albums from 1940-2019.
 
+The goal is to aggregate and clean the data for these albums and investigate the rise and fall of the popularity of genres.
+
+Prophet will be used to fit/train the model and predict future rises in popularity of genres.
+
 ## III. Data:
 
 #### 1. Sourcing:
@@ -65,7 +69,7 @@ Encoded using One-Hot encoding, took counts, and selected the top 20 represented
 /Resources/top_album_genres_1940_2019.pkl
 ```
 
-![1725642315632](https://file+.vscode-resource.vscode-cdn.net/c%3A/ai_projects/top_selling_album_genres/image/README/1725642315632.png)
+![1726000724285](image/README/1726000724285.png)
 
 #### 3. Modeling, Visualizing, Analysis:
 
@@ -86,13 +90,13 @@ for genre in df.columns[1:]:
     df.plot(kind = 'line', x = 'Year', y = genre, figsize=(5, 2))
 ```
 
-
 **Initial Visualizations:**
 
 Scatter and Line Plots helped display historical trends in the data visually.
 
+**Example 1: New Wave genre peak, starting in the late 1970s until late 1980s.**
 
-Example 1: New Wave genre peak, starting in the late 1970s until late 1980s.
+Shown below with scatter and line plots.  (All Genre plots are available in the ipynb notebook in this project: 'music_genres_prophet.ipynb')
 
 > **New wave commercially peaked from the late 1970s into the early 1980s with numerous major musicians and an abundance of one-hit wonders** . MTV, which was launched in 1981, heavily promoted new-wave acts, boosting the genre's popularity in the United States.
 >
@@ -100,19 +104,23 @@ Example 1: New Wave genre peak, starting in the late 1970s until late 1980s.
 
 ![1725643241234](image/README/1725643241234.png)
 
-Example 2: Chamber Pop popularity rise, starting in the mid-1990s
+**Example 2: Chamber Pop popularity rise, starting in the mid-1990s**
 
 > In the mid-1990s, chamber pop developed as a subgenre of [indie rock](https://en.wikipedia.org/wiki/Indie_rock)[[4]](https://en.wikipedia.org/wiki/Chamber_pop#cite_note-FOOTNOTETonelli20043-4) or [indie pop](https://en.wikipedia.org/wiki/Indie_pop)[[5]](https://en.wikipedia.org/wiki/Chamber_pop#cite_note-AMIndiePop-5) in which musicians opposed the [distorted](https://en.wikipedia.org/wiki/Distortion_(music)) guitars, [lo-fi](https://en.wikipedia.org/wiki/Lo-fi_music) aesthetic, and simple arrangements common to the [alternative](https://en.wikipedia.org/wiki/Alternative_rock) or "[modern rock](https://en.wikipedia.org/wiki/Modern_rock)" groups of that era.
+>
+> -source: https://en.wikipedia.org/wiki/Chamber_pop
 
--source: https://en.wikipedia.org/wiki/Chamber_pop**
+
+![1726000946267](image/README/1726000946267.png)
 
 
+**Example 3: The rise of Conscious Hip-Hop, starting in the early-1990s**
 
-Example 3: The rise of Conscious Hip-Hop, starting in the early-1990s
+> As hip-hop rose in popularity during the 1980s, conscious rap emerged from within.  Six years after “The Message”, New York-based hip-hop group Public Enemy made waves with their 1988 album, It Takes A Nation Of Millions To Hold Us Back.  As the 1990s continued, so did conscious rap's prevalence.
+>
+> -source: hhttps://www.soundoflife.com/blogs/mixtape/conscious-rap-origin
 
 ![1725999998060](image/README/1725999998060.png)
-
-
 
 ## Time Series Forecasting with Prophet
 
@@ -148,11 +156,14 @@ for genre in df.columns[1:]:
     model.plot(forecast_trends, xlabel='Date', ylabel=(f'Genre: {genre}'))
 ```
 
-From example 2 and 3 above, here are the Prophet predictions for the coming 8 years. 
 
-Both Chamber Pop and Conscious Hip-Hop are predicted by the model to be on the rise again.
+
+From example 2 and 3 above, here are the Prophet predictions for the coming 8 years.
+
+Both **Chamber Pop and Conscious Hip-Hop** are predicted by the model to be on the rise again.
 
 ![1726000143596](image/README/1726000143596.png)
 
-
 ![1726000113002](image/README/1726000113002.png)
+
+#### Final Thoughts, A Little Fun :)
