@@ -110,9 +110,7 @@ Shown below with scatter and line plots.  (All Genre plots are available in the 
 >
 > -source: https://en.wikipedia.org/wiki/Chamber_pop
 
-
 ![1726000946267](image/README/1726000946267.png)
-
 
 **Example 3: The rise of Conscious Hip-Hop, starting in the early-1990s**
 
@@ -156,8 +154,6 @@ for genre in df.columns[1:]:
     model.plot(forecast_trends, xlabel='Date', ylabel=(f'Genre: {genre}'))
 ```
 
-
-
 From example 2 and 3 above, here are the Prophet predictions for the coming 8 years.
 
 Both **Chamber Pop and Conscious Hip-Hop** are predicted by the model to be on the rise again.
@@ -166,4 +162,8 @@ Both **Chamber Pop and Conscious Hip-Hop** are predicted by the model to be on t
 
 ![1726000113002](image/README/1726000113002.png)
 
-#### Final Thoughts, A Little Fun :)
+#### Final Thoughts... :)
+
+Early draft of a combined chart with top 20 genre data combined.
+
+![1726001196644](image/README/1726001196644.png)
